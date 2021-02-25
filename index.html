@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasputin</title>
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="page-title">Rasputin</h1>
+        <div class="page-subtitle">Another random sequence generator</div>
+    </header>
+
+    <main>
+
+        <section id="settings-section" class="settings-section">
+
+            <h2 class="-display-n">Settings</h2>
+
+            <div class="-pb-2">
+
+                <span class="-row-mobile -py-2 -mr-2">Select sequence type:</span>
+
+                <div class="sts-wrap">
+                    <input name="sequence-type" type="checkbox"
+                        id="sequence-type-lowercase" class="sequence-type-selector"
+                        checked="checked"
+                    >
+                    <label for="sequence-type-lowercase"
+                        title="Toggle to include/exclude lowercase alphabetical characters in the generated sequence"
+                    ><span class="nts-switch"></span>Lowercase</label>
+                </div>
+                
+                <div class="sts-wrap">
+                    <input name="sequence-type" type="checkbox"
+                        id="sequence-type-uppercase" class="sequence-type-selector"
+                    >
+                    <label for="sequence-type-uppercase"
+                        title="Toggle to include/exclude uppercase alphabetical characters in the generated sequence"
+                    ><span class="nts-switch"></span>Uppercase</label>
+                </div>
+
+                <div class="sts-wrap">
+                    <input name="sequence-type" type="checkbox"
+                        id="sequence-type-numeric" class="sequence-type-selector"
+                    >
+                    <label for="sequence-type-numeric"
+                        title="Toggle to include/exclude numerical characters in the generated sequence"
+                    ><span class="nts-switch"></span>Numeric</label>
+                </div>
+                
+                <div class="sts-wrap">
+                    <input name="sequence-type" type="checkbox"
+                        id="sequence-type-special" class="sequence-type-selector"
+                    >
+                    <label for="sequence-type-special"
+                        title="Toggle to include/exclude special characters in the generated sequence"
+                    ><span class="nts-switch"></span>Special ch.</label>
+                </div>
+
+            </div>
+
+            <div class="-pb-2">
+                <label for="sequence-length" class="-mr-2">Select sequence length:</label>
+                <input type="number" id="sequence-length" value="8" min="1" max="512">
+            </div>
+
+            <div class="-py-2 -align-c">
+                <button id="generate-btn" type="button">Generate</button>
+            </div>
+
+            <div class="-pb-2 -align-c">
+                <div id="output"></div>
+            </div>
+
+        </section>
+
+
+
+        <section class="notes-section">
+
+            <h2 class="-display-n">Notes</h2>
+
+            <section id="lowercase-note-section" class="single-note-section">
+                <h3 class="single-note-section-heading">Available lowercase letters</h3>
+            </section>
+
+            <section id="uppercase-note-section" class="single-note-section">
+                <h3 class="single-note-section-heading">Available uppercase letters</h3>
+            </section>
+
+            <section id="numeric-note-section" class="single-note-section">
+                <h3 class="single-note-section-heading">Available numerical characters</h3>
+            </section>
+
+            <section id="special-note-section" class="single-note-section">
+                <h3 class="single-note-section-heading">Available special characters</h3>
+            </section>
+
+        </section>
+
+    </main>
+
+    <script type="text/javascript" src="rasputin.js"></script>
+
+</body>
+
+</html>
