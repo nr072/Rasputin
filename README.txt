@@ -40,3 +40,7 @@ can be a lowercase letter or a digit between and including 0 and 9.
 
 The sequence length can currently be an integer between and including
 1 and 512.
+
+Keyboard shortcuts are also provided for selecting sequence types and
+generating sequences. The letters 'l', 'u', 'n', 's', and 'g' are used
+for relevant actions.

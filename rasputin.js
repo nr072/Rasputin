@@ -43,6 +43,10 @@
     The sequence length can currently be an integer between and including
     1 and 512.
 
+    Keyboard shortcuts are also provided for selecting sequence types and
+    generating sequences. The letters 'l', 'u', 'n', 's', and 'g' are used
+    for relevant actions.
+
 */
 
 
@@ -202,6 +206,33 @@ _id("settings-section").addEventListener("keypress", function (event) {
 
 
 
+// Keyboard shortcuts to select sequence types. The first letter of each
+// sequence type is used as the corresponding shortcut.
+_id("settings-section").addEventListener("keypress", function (event) {
+    if (event.key === "l" || event.charCode === 108) {
+        toggleSequenceType("lowercase");
+    }
+    if (event.key === "u" || event.charCode === 117) {
+        toggleSequenceType("uppercase");
+    }
+    if (event.key === "n" || event.charCode === 110) {
+        toggleSequenceType("numeric");
+    }
+    if (event.key === "s" || event.charCode === 115) {
+        toggleSequenceType("special");
+    }
+});
+
+
+
+// A placeholder element is focused on page load so that the keyboard
+// shortcuts can be used. The settings section itself is not focused
+// because the focus-indicating outline attracts attention. The outline
+// of this placeholder element, on the other hand, is hidden via CSS.
+_id("focus-placeholder").focus();
+
+
+
 /*
 ------------------------------------------------------------------------
 
@@ -289,6 +320,33 @@ function getRandomSequence(types) {
 
     // The generated sequence is simply shown on the page.
     _id("output").textContent = sequence;
+
+}
+
+
+
+/*
+    Enables/Disables sequence type selectors.
+*/
+function toggleSequenceType(type) {
+
+    // HTML 'id' is determined based on passed type.
+    const id = (
+        type === "lowercase" ? "sequence-type-lowercase" : (
+            type === "uppercase" ? "sequence-type-uppercase" : (
+                type === "numeric" ? "sequence-type-numeric" : (
+                    type === "special" ? "sequence-type-special" : undefined
+                )
+            )
+        )
+    );
+
+    if (id === undefined) {
+        return;
+    }
+
+    // The current state is reversed.
+    _id(id).checked = !_id(id).checked;
 
 }
 

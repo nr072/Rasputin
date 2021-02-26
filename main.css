@@ -109,6 +109,12 @@ input#sequence-length {
     max-width: 100px;
 }
 
+/* Placeholder element to focus on page load so that keyboard shortcuts
+can be used. */
+#focus-placeholder:focus {
+    outline: none;
+}
+
 
 
 /*
