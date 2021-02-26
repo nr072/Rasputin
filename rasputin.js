@@ -72,7 +72,15 @@
       by an asterisk, and ending with an asterisk followed by a forward
       slash) has been used to write comments before function declarations
       for no particular reason other than that those are good places to
-      explain what a function does (with extra notes, if any).
+      explain what a function does (with extra notes, if any) and that is
+      likely to take multiple sentences.
+
+    - CSS utility classes have been named like those provided by Twitter
+      Bootstrap but with a preceding hyphen character (e.g., '-mr-1' for
+      a particular 'margin-right' value).
+
+      This has been done so that a quick glance at the HTML does not make
+      the impression that they are Bootstrap classes.
 
 */
 
