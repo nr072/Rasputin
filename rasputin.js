@@ -47,12 +47,51 @@
     generating sequences. The letters 'l', 'u', 'n', 's', and 'g' are used
     for relevant actions.
 
+
+
+    Notes on coding style
+    ---------------------------------------------
+
+    - JS variables have been named as if they were case insensitive, while
+      using the 'camelCase' style for ease of comprehension.
+
+    - Global variable names have been written in uppercase letters since
+      sometimes it might be important to distinguish which one is global
+      between two similar variable names.
+
+      Some common conventions might suggest using uppercase for constant
+      values only. But since 'const' has been used so much here, it is not
+      an option to write some in uppercase and some in lowercase letters
+      (because, obviously, having three quarters of the variable names in
+      uppercase would not look good).
+
+      The helpful aliases have been spared this. They are supposed to be
+      named in a way that will not create any confusion on the first place.
+
+    - The multi-line commenting syntax (i.e., starting with a forward slash
+      by an asterisk, and ending with an asterisk followed by a forward
+      slash) has been used to write comments before function declarations
+      for no particular reason other than that those are good places to
+      explain what a function does (with extra notes, if any).
+
 */
 
 
 
 
 "use strict";
+
+// If the minimum and maximum limits for the allowed length are changed
+// in the HTML, they must be changed here as well.
+const MIN_SEQ_LENGTH = 1;
+const MAX_SEQ_LENGTH = 512;
+
+// JS is used to reset the sequence length in the <input> to a default
+// value on page load/reload. If the default value in the HTML code is
+// changed, this needs to be changed as well.
+const DEFAULT_SEQ_LENGTH = 8;
+
+
 
 /*
 ------------------------------------------------------------------------
@@ -126,10 +165,11 @@ Available randomizers
 const RANDOMIZERS = {
 
     /*
-        Maybe the most common way of generating a random integer within
-        a fixed range is used to get a random index which is then used
+        Maybe the most common way of generating a random integer within a
+        fixed range is used here to get a random index which is then used
         to return the corresponding character from the available character
         pool.
+
         This is, basically, just choosing one random character from all
         the available characters.
     */
@@ -233,6 +273,22 @@ _id("focus-placeholder").focus();
 
 
 
+// A few buttons are provided to set various sequence lengths easily.
+_id("s-length-sugg-16").onclick = () => {
+    setSequenceLength(16);
+};
+_id("s-length-sugg-32").onclick = () => {
+    setSequenceLength(32);
+};
+_id("s-length-sugg-64").onclick = () => {
+    setSequenceLength(64);
+};
+_id("s-length-sugg-128").onclick = () => {
+    setSequenceLength(128);
+};
+
+
+
 /*
 ------------------------------------------------------------------------
 
@@ -300,10 +356,10 @@ function getRandomSequence(types) {
     // The length of the sequence as per user input.
     const sequenceLength = _id("sequence-length").value;
 
-    // Just a check for the limit of the current maximum character length
-    // of the sequence.
-    if (sequenceLength > 512) {
-        alert("Current maximum character length exceeded!");
+    // Just a check against current minimum and maximum limits for the
+    // character length.
+    if (sequenceLength > MAX_SEQ_LENGTH || sequenceLength < MIN_SEQ_LENGTH) {
+        alert("Entered sequence length is not valid!");
         return;
     }
 
@@ -348,6 +404,23 @@ function toggleSequenceType(type) {
     // The current state is reversed.
     _id(id).checked = !_id(id).checked;
 
+}
+
+
+
+/*
+    Sets a value to the <input> element for the sequence length.
+
+    This function is actually used for the predefined length suggestion
+    buttons only.
+*/
+function setSequenceLength(length) {
+    if (parseInt(length) === NaN) {
+        return;
+    }
+    if (length >= MIN_SEQ_LENGTH && length <= MAX_SEQ_LENGTH) {
+        _id("sequence-length").value = length;
+    }
 }
 
 
@@ -413,6 +486,6 @@ function resetSettings() {
     });
 
     // Sequence is reset as well.
-    _id("sequence-length").value = 8;
+    _id("sequence-length").value = DEFAULT_SEQ_LENGTH;
 
 }

@@ -44,3 +44,30 @@ The sequence length can currently be an integer between and including
 Keyboard shortcuts are also provided for selecting sequence types and
 generating sequences. The letters 'l', 'u', 'n', 's', and 'g' are used
 for relevant actions.
+
+
+
+Notes on coding style
+---------------------------------------------
+
+- JS variables have been named as if they were case insensitive, while
+  using the 'camelCase' style for ease of comprehension.
+
+- Global variable names have been written in uppercase letters since
+  sometimes it might be important to distinguish which one is global
+  between two similar variable names.
+
+  Some common conventions might suggest using uppercase for constant
+  values only. But since 'const' has been used so much here, it is not
+  an option to write some in uppercase and some in lowercase letters
+  (because, obviously, having three quarters of the variable names in
+  uppercase would not look good).
+
+  The helpful aliases have been spared this. They are supposed to be
+  named in a way that will not create any confusion on the first place.
+
+- The multi-line commenting syntax (i.e., starting with a forward slash
+  by an asterisk, and ending with an asterisk followed by a forward
+  slash) has been used to write comments before function declarations
+  for no particular reason other than that those are good places to
+  explain what a function does (with extra notes, if any).

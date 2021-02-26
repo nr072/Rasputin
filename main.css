@@ -29,10 +29,10 @@ button,
 input[type=button] {
     background: transparent;
     padding: 0.5rem 1.25rem;
-    border: 1px solid #777;
+    border: 1px solid #aaa;
     border-radius: 0.25rem;
     cursor: pointer;
-    color: #333;
+    color: #555;
 }
 button:hover,
 button:active,
@@ -107,6 +107,16 @@ input#sequence-length {
     border: 1px solid lightgray;
     padding: 0 0.5rem;
     max-width: 100px;
+}
+
+.s-length-sugg-btn {
+    padding: 0.1rem 0.5rem;
+    margin: 0 0.25rem;
+}
+
+.generate-btn {
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 /* Placeholder element to focus on page load so that keyboard shortcuts
@@ -242,13 +252,29 @@ Utility classes
     padding-bottom: 1rem;
 }
 
+/*.-py-1 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}*/
 .-py-2 {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+/*.-py-3 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}*/
+/*.-py-4 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}*/
 
 .-mr-2 {
     margin-right: 1rem;
+}
+
+.-mb-2 {
+    margin-bottom: 1rem;
 }
 
 .-row {
