@@ -193,12 +193,12 @@ generateNotes();
 
 // Clicking the 'generate' button or pressing the 'g' key generates a
 // random sequence.
-window.addEventListener("keypress", function (event) {
-    if (event.key === "g" || event.keyCode === 103) {
+_id("generate-btn").addEventListener("click", () => getRandomSequence());
+_id("settings-section").addEventListener("keypress", function (event) {
+    if (event.key === "g" || event.charCode === 103) {
         getRandomSequence();
     }
 });
-_id("generate-btn").addEventListener("click", () => getRandomSequence());
 
 
 
