@@ -1,6 +1,6 @@
 :root {
     font: 13px sans-serif;
-    --blue: teal;
+    --blue: #007979;
     --blue-light: #68cccc;
     --blue-lighter: #7de1e1;
 }
@@ -88,14 +88,18 @@ Setting section
 }
 
 input.sequence-type-selector {
-    display: none;
+    position: absolute;
+    z-index: -1;
+}
+input.sequence-type-selector:focus + label {
+    outline: 1px dotted #000;
 }
 input.sequence-type-selector:active + label,
 input.sequence-type-selector:checked + label {
     color: var(--nts-s-checked-label-color);
 }
 input.sequence-type-selector + label {
-    color: #777;
+    color: #666;
 }
 input.sequence-type-selector + label:hover {
     color: var(--nts-s-checked-label-color);
@@ -122,6 +126,8 @@ input#sequence-length {
 /* Placeholder element to focus on page load so that keyboard shortcuts
 can be used. */
 #focus-placeholder:focus {
+    height: 0;
+    width: 0;
     outline: none;
 }
 
