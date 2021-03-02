@@ -246,7 +246,13 @@ generateNotes();
 // Clicking the 'generate' button or pressing the 'g' key generates a
 // random sequence.
 _id("generate-btn").addEventListener("click", () => getRandomSequence());
-_id("settings-section").addEventListener("keypress", function (event) {
+document.addEventListener("keyup", function (event) {
+
+    // Keyboard shortcuts will not work inside input fields.
+    if (event.target.tagName === "INPUT") {
+        return;
+    }
+
     if (event.key === "g" || event.charCode === 103) {
         getRandomSequence();
     }
@@ -256,7 +262,13 @@ _id("settings-section").addEventListener("keypress", function (event) {
 
 // Keyboard shortcuts to select sequence types. The first letter of each
 // sequence type is used as the corresponding shortcut.
-_id("settings-section").addEventListener("keypress", function (event) {
+document.addEventListener("keyup", function (event) {
+
+    // Keyboard shortcuts will not work inside input fields.
+    if (event.target.tagName === "INPUT") {
+        return;
+    }
+
     if (event.key === "l" || event.charCode === 108) {
         toggleSequenceType("lowercase");
     }
@@ -270,14 +282,6 @@ _id("settings-section").addEventListener("keypress", function (event) {
         toggleSequenceType("special");
     }
 });
-
-
-
-// A placeholder element is focused on page load so that the keyboard
-// shortcuts can be used. The settings section itself is not focused
-// because the focus-indicating outline attracts attention. The outline
-// of this placeholder element, on the other hand, is hidden via CSS.
-_id("focus-placeholder").focus();
 
 
 

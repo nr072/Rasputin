@@ -87,6 +87,10 @@ Setting section
     }
 }
 
+.settings-section fieldset {
+    border: none;
+}
+
 input.sequence-type-selector {
     position: absolute;
     z-index: -1;
@@ -121,14 +125,6 @@ input#sequence-length {
 .generate-btn {
     border-color: var(--blue);
     color: var(--blue);
-}
-
-/* Placeholder element to focus on page load so that keyboard shortcuts
-can be used. */
-#focus-placeholder:focus {
-    height: 0;
-    width: 0;
-    outline: none;
 }
 
 
@@ -244,7 +240,7 @@ Utility classes
 ------------------------------------------------------------------------
 */
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
     .-row-mobile {
         width: 100%;
     }
@@ -252,8 +248,11 @@ Utility classes
         display: block;
         width: 100%;
     }
-}
+}*/
 
+.-pb-1 {
+    padding-bottom: 0.5rem;
+}
 .-pb-2 {
     padding-bottom: 1rem;
 }
@@ -275,12 +274,16 @@ Utility classes
     padding-bottom: 2rem;
 }*/
 
-.-mr-2 {
-    margin-right: 1rem;
+.-mt-1 {
+    margin-top: 0.5rem;
 }
 
-.-mb-2 {
-    margin-bottom: 1rem;
+.-mr-1 {
+    margin-right: 0.5rem;
+}
+
+.-mb-1 {
+    margin-bottom: 0.5rem;
 }
 
 .-row {

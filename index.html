@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasputin</title>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="rasputin.css">
 
 </head>
 
@@ -24,9 +24,9 @@
 
             <h2 class="-display-n">Settings</h2>
 
-            <div class="-pb-2">
+            <fieldset class="-pb-2">
 
-                <span class="-row-mobile -py-2 -mr-2">Select sequence type:</span>
+                <legend class="-mb-1">Select sequence type:</legend>
 
                 <div class="sts-wrap">
                     <input name="sequence-type" type="checkbox"
@@ -65,29 +65,31 @@
                     ><span class="nts-switch"></span>Special ch.</label>
                 </div>
 
-            </div>
+            </fieldset>
 
             <div class="-pb-2">
 
-                <label for="sequence-length" class="-mr-2">Select sequence length:</label>
+                <label for="sequence-length" class="-mr-1">Select sequence length:</label>
 
-                <input type="number" id="sequence-length" class="-mb-2" value="8" min="1" max="512">
+                <input type="number" id="sequence-length" value="8" min="1" max="512">
 
-                <button id="s-length-sugg-16" class="s-length-sugg-btn"
-                    type="button" title="Set &quot;16&quot; as the sequence length"
-                >Use 16</button>
+                <div class="-mt-1">
+                    <button id="s-length-sugg-16" class="s-length-sugg-btn"
+                        type="button" title="Set &quot;16&quot; as the sequence length"
+                    >Use 16</button>
 
-                <button id="s-length-sugg-32" class="s-length-sugg-btn"
-                    type="button" title="Set &quot;32&quot; as the sequence length"
-                >Use 32</button>
+                    <button id="s-length-sugg-32" class="s-length-sugg-btn"
+                        type="button" title="Set &quot;32&quot; as the sequence length"
+                    >Use 32</button>
 
-                <button id="s-length-sugg-64" class="s-length-sugg-btn"
-                    type="button" title="Set &quot;64&quot; as the sequence length"
-                >Use 64</button>
+                    <button id="s-length-sugg-64" class="s-length-sugg-btn"
+                        type="button" title="Set &quot;64&quot; as the sequence length"
+                    >Use 64</button>
 
-                <button id="s-length-sugg-128" class="s-length-sugg-btn"
-                    type="button" title="Set &quot;128&quot; as the sequence length"
-                >Use 128</button>
+                    <button id="s-length-sugg-128" class="s-length-sugg-btn"
+                        type="button" title="Set &quot;128&quot; as the sequence length"
+                    >Use 128</button>
+                </div>
 
             </div>
 
@@ -99,8 +101,6 @@
                 <div id="output"></div>
             </div>
 
-            <span id="focus-placeholder" tabindex="-1"></span>
-
         </section>
 
 
@@ -111,18 +111,22 @@
 
             <section id="lowercase-note-section" class="single-note-section">
                 <h3 class="single-note-section-heading">Available lowercase letters</h3>
+                <noscript>(Will be added via JS)</noscript>
             </section>
 
             <section id="uppercase-note-section" class="single-note-section">
                 <h3 class="single-note-section-heading">Available uppercase letters</h3>
+                <noscript>(Will be added via JS)</noscript>
             </section>
 
             <section id="numeric-note-section" class="single-note-section">
                 <h3 class="single-note-section-heading">Available numerical characters</h3>
+                <noscript>(Will be added via JS)</noscript>
             </section>
 
             <section id="special-note-section" class="single-note-section">
                 <h3 class="single-note-section-heading">Available special characters</h3>
+                <noscript>(Will be added via JS)</noscript>
             </section>
 
         </section>
