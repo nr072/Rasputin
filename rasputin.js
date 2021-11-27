@@ -342,6 +342,12 @@ function getRandomChar(options) {
     The sequence is generated one character at a time. The type of each
     character is determined based on the types the user has selected on
     the page.
+
+    'types' is a boolean array, with each item indicating if the character
+    of the corresponding index in the resulting sequence will be numeric or
+    not. There are 2 possible values for each item of the array:
+        1. "a" indicates an alphabetical character
+        2. "n" indicates a numerical character
 */
 function getRandomSequence(types) {
 
@@ -388,6 +394,16 @@ function getRandomSequence(types) {
 
     // The generated sequence is simply shown on the page.
     _id("output").textContent = sequence;
+
+    // let sequence = "";
+
+    // // For each item of the 'types' array, a random character of that type
+    // // is generated.
+    // types.forEach(type => {
+    //     const isNumeric = type === "n";
+    //     const character = getRandomChar(isNumeric);
+    //     sequence += character;
+    // });
 
 }
 
